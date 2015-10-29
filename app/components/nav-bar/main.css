@@ -1,0 +1,90 @@
+.NavBar {
+    height: 60px;
+    background-color: #084c6d;
+    z-index: 100;
+}
+
+.NavBar
+.nav-bar-content {
+    height: 100%;
+}
+
+.NavBar
+.nav-bar-left {
+    float: left;
+    height: 100%;
+}
+
+.NavBar
+.nav-bar-left
+.logo img {
+    margin: 5px;
+    height: 50px;
+}
+
+.NavBar
+.nav-bar-right {
+    display: flex;
+    align-content: center;
+    float: right;
+    height: 100%;
+}
+
+.NavBar
+.nav-bar-right
+a {
+    align-self: center;
+    color: white;
+    font-size: 20px;
+    padding: 0 20px;
+}
+
+.NavBar
+.nav-bar-right
+.mobile-btn
+a {
+    display: none;
+}
+
+.NavBar
+.nav-bar-dropdown {
+    position: fixed;
+    right: 70px;
+    z-index: 10;
+}
+
+.NavBar
+.nav-bar-dropdown
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+.NavBar
+.nav-bar-dropdown
+li {
+    width: 175px;
+    height: 50px;
+    background: rgba(8, 76, 109, 0.9);
+    margin: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    font-weight: 200;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
+
+@media (max-width: 750px) {
+    .NavBar
+    .nav-bar-right
+    >a {
+        display: none;
+    }
+    .NavBar
+    .nav-bar-right
+    .mobile-btn
+    a {
+        display: block;
+    }
+}

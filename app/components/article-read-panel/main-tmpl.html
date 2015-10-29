@@ -1,0 +1,13 @@
+<div class="articleRead">
+    <h4 v-if="$loadingRouteData">Loading...</h4>
+    <template v-else>
+        <div class="article-head">
+            <div class="article-cover">
+                <img :src="article.cover_image.original" />
+            </div>
+            <h1 v-text="article.title"></h1>
+        </div>
+        <div class="article-content" v-html="article.body">
+        </div>
+    </template>
+</div>

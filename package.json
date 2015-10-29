@@ -1,0 +1,29 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jspm": "^0.16.13"
+  },
+  "jspm": {
+    "dependencies": {
+      "css": "github:systemjs/plugin-css@^0.1.19",
+      "normalize.css": "npm:normalize.css@^3.0.3",
+      "text": "github:systemjs/plugin-text@^0.0.3",
+      "vue": "npm:vue@^1.0.1",
+      "vue-resource": "npm:vue-resource@^0.1.16",
+      "vue-router": "npm:vue-router@^0.7.5"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}
