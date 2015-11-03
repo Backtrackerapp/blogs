@@ -3,7 +3,13 @@
     <template v-else>
         <div class="article-head">
             <div class="article-cover">
-                <img :src="article.cover_image.original" />
+                <img :src="image" />
+            </div>
+            <div class="social">
+                <a target="_blank" :href="mail_to" class="mail"><img src="resources/mail.png" /></a>
+                <a target="_blank" :href="tweet"><img src="resources/twitter.png"/></a>
+                <a target="_blank" :href="facebook"><img src="resources/facebook.png" /></a>
+                <a target="_blank" :href="pinterest"><img src="resources/pinterest.png"/></a>
             </div>
             <h1 v-text="article.title"></h1>
         </div>

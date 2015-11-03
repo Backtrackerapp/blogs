@@ -1,0 +1,35 @@
+.loader {
+  background-color: #F06E40;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+}
+
+.loader
+.progress {
+  stroke-dasharray: 628;
+  stroke-dashoffset: 628;
+  animation: dash 4s cubic-bezier(.82,.04,.53,.98) forwards;
+}
+
+.loader
+svg {
+  width:100%;
+  margin: auto;
+  margin-top: 250px;
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

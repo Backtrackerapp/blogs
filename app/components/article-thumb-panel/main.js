@@ -6,12 +6,12 @@ Vue.component('article-thumb', {
     data() {
         return {
             height: 400
-        }
+        };
     },
-    props: ['article'],
+    props: ['article', 'selected'],
     computed: {
         cover(){
-            return `url(${this.article.cover_image.ipad}) no-repeat center center`
+            return `url(${this.article.cover_image.ipad}) no-repeat center center`;
         }
     },
     template: tmpl,

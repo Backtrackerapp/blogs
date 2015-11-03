@@ -1,9 +1,46 @@
 .articleRead
 .article-head
-.article-cover {}
+.article-cover {
+    min-height: 300px;
+}
+
+.articleRead
+.social {
+    padding-top: 15px;
+}
+
+.articleRead
+.social.mail
+a {
+    padding-top: 15px;
+}
+
+.articleRead
+.social
+a {
+    display: inline-block;
+    height: 35px;
+    padding-right: 5px;
+}
+
+.articleRead
+.social
+img {
+    height: 100%;
+    width: auto;
+}
+
+@media (max-width: 750px) {
+    .articleRead
+    .article-head
+    .article-cover {
+        min-height: 1px;
+    }
+}
 
 .articleRead
 .article-head
+.article-cover
 img {
     width: 100%;
 }

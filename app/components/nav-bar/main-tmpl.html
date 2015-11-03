@@ -1,24 +1,53 @@
-<div class="NavBar">
+<div class="NavBar" :class="{shown: mobile_nav}">
     <div class="nav-bar-content">
         <div class="nav-bar-left">
-            <a class="logo" v-link.literal="/" ><img src="resources/logo.png" /></a>
+            <a class="logo" href="//www.backtrackerapp.com" ><img src="resources/logo-shadow.png" /></a>
         </div>
         <div class="nav-bar-right">
-            <a>Articles</a>
-            <a>Gallery</a>
+            <a target="_blank" href="//www.backtrackerapp.com">Home</a>
+            <a @click="go_home">Articles <span @click.stop="toggle_categories" :class="{open: categ}"><img src="resources/chevron.svg" class="toggle" /></span></a>
+            <a v-link.literal="/gallery">Gallery</a>
             <div class="mobile-btn">
-                <a><img src="resources/burger.png" /></a>
+                <a @click="toggle_mobile_nav">
+                    <img src="resources/cross.png" v-show="mobile_nav"/>
+                    <img src="resources/burger.png" v-else/>
+                </a>
             </div>
         </div>
     </div>
-    <div class="nav-bar-dropdown">
+    <div class="nav-bar-dropdown" v-if="categ" transition="left-slide">
         <ul>
-            <li>Europe</li>
-            <li>North America</li>
-            <li>Latin America</li>
-            <li>Australasia</li>
-            <li>Asia</li>
-            <li>Africa</li>
+            <li @click="go_category('europe')">Europe</li>
+            <li @click="go_category('northamerica')">North America</li>
+            <li @click="go_category('latinamerica')">Latin America</li>
+            <li @click="go_category('aus')">Australasia</li>
+            <li @click="go_category('asia')">Asia</li>
+            <li @click="go_category('africa')">Africa</li>
+        </ul>
+    </div>
+    <div class="mobile-nav">
+        <ul>
+            <li @click.stop="toggle_mobile_categories">Articles</li>
+            <li>&mdash;</li>
+            <template v-if="mobile_categ">
+                <li @click="go_home">All</li>
+                <li @click="go_category('europe')">Europe</li>
+                <li @click="go_category('northamerica')">North America</li>
+                <li @click="go_category('latinamerica')">Latin America</li>
+                <li @click="go_category('aus')">Australasia</li>
+                <li @click="go_category('asia')">Asia</li>
+                <li @click="go_category('africa')">Africa</li>
+            </template>
+            <template v-else>
+                <li v-link.literal="/gallery">Gallery</li>
+                <li>&mdash;</li>
+                <li><a href="mailto:henry@backtrackerapp.co.uk">Contact</a></li>
+                <li>&mdash;</li>
+                <li><a target="_blank" href="https://www.facebook.com/backtrackerapp">Facebook</a></li>
+                <li><a target="_blank" href="https://twitter.com/BacktrackerApp">Twitter</a></li>
+                <li><a target="_blank" href="http://instagram.com/backtrackerapp/">Instagram</a></li>
+                <li><a target="_blank" href="http://backtrackerapp.tumblr.com/">Tumblr</a></li>
+            </template>
         </ul>
     </div>
 </div>

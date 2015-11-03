@@ -1,9 +1,16 @@
 <div class="ArticlesPage">
     <div class="articles-index" :class="{side: viewed}">
         <h4 v-if="$loadingRouteData" class="loader">Loading...</h4>
-        <h4 v-if="filter && !$loadingRouteData" v-text="fancy_filter"></h4>
-        <article-thumb v-for="article in articles" :article="article" @click="open_article(article)"></article-thumb>
-        <h4 v-if="articles.length == 0">Woops I guess we haven't been there! <br> Want to send us tickets and we'll tell you all about it?</h4>
+        <template v-else>
+            <div class="back" v-if="viewed" v-link.literal="/"><img src="resources/back-arrow.svg" /></div>
+            <h4 v-if="filter" v-text="fancy_filter" class="filter"></h4>
+            <div class="flex">
+                <article-thumb v-for="article in articles" :article="article" @click="open_article(article)" :selected="selected"></article-thumb>
+            </div>
+            <button v-if="more && articles.length>=2" @click="get_more" v-text="more_text"></button>
+            <h4 v-if="!more && mored">We've run out of travel wisdom.</h4>
+            <h4 v-if="articles.length == 0">Woops I guess we haven't been there! <br> Want to send us tickets and we'll tell you all about it?</h4>
+        </template>
     </div>
     <div class="article-detail">
         <router-view :article.sync="viewed"><router-view>

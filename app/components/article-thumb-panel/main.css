@@ -15,6 +15,23 @@
 }
 
 .articleThumb
+.shadow {
+    transition: all 0.5s;
+    opacity: 0;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.7));
+}
+
+.articleThumb:hover
+.shadow,
+.articleThumb.selected
+.shadow {
+    opacity: 1;
+}
+
+.articleThumb
 .thumb-img {
     width: 100%;
     height: 100%;
@@ -33,15 +50,28 @@ img {
 
 .articleThumb
 .thumb-content {
+    transition: all 0.5s;
     position: absolute;
     top: 0;
     text-align: center;
     width: 100%;
     height: 100%;
     display: flex;
+    -webkit-flex-direction: column; /* Safari */
+    flex-direction:         column;
+    -webkit-justify-content: center; /* Safari */
+    justify-content:         center;
     align-content: center;
     padding: 5px;
     box-sizing: border-box;
+}
+
+
+.articleThumb:hover
+.thumb-content,
+.articleThumb.selected
+.thumb-content {
+    transform: translateY(-25px);
 }
 
 .articleThumb
@@ -50,7 +80,7 @@ h1 {
     text-transform: uppercase;
     width: 100%;
     align-self: center;
-    color: white;
+    color: inherit;
     font-size: 20px;
 }
 
@@ -59,4 +89,26 @@ h1 {
 h1 span {
     text-transform: none;
     font-weight: 200;
+}
+
+.articleThumb
+.thumb-content
+h2 {
+    transition: all 0.5s;
+    opacity: 0;
+    margin: 0;
+    color: inherit;
+    font-weight: 200;
+    font-size: 17px;
+    transform: translateY(25px);
+}
+
+.articleThumb:hover
+.thumb-content
+h2,
+.articleThumb.selected
+.thumb-content
+h2 {
+    opacity: 1;
+    transform: translateY(0);
 }
