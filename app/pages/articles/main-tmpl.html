@@ -1,6 +1,6 @@
 <div class="ArticlesPage">
     <div class="articles-index" :class="{side: viewed}">
-        <h4 v-if="$loadingRouteData" class="loader">Loading...</h4>
+        <h4 v-if="$loadingRouteData" class="loading">Loading...</h4>
         <template v-else>
             <div class="back" v-if="viewed" v-link.literal="/"><img src="resources/back-arrow.svg" /></div>
             <h4 v-if="filter" v-text="fancy_filter" class="filter"></h4>

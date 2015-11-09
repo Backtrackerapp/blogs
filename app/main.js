@@ -18,8 +18,10 @@ function calc_content_height() {
 }
 
 var router = new Router();
+var debug = false;
 
 Vue.http.options.root = '//api.backtrackerapp.com';
+if(debug) Vue.http.options.root = '//backtrackerdev.herokuapp.com';
 
 router.map({
     '*': {
@@ -31,6 +33,7 @@ router.map({
     '/gallery': gallery_page
 });
 
+
 router.start({
     data() {
         return {
@@ -39,12 +42,11 @@ router.start({
             mobile_nav: false,
             modal: null,
             modal_params: null,
-            loaded: false,
         };
     },
     computed: {
         height() {
-            var height = this.content_height;
+            var height = this.content_height + 1;
             if(this.mobile_nav) height -= 250;
             return height + 'px';
         }
@@ -68,10 +70,8 @@ router.start({
                 this.modal_height = window.innerHeight + "px";
             } );
         });
-        window.addEventListener("load",function() {
-            setTimeout(function(){
-                window.scrollTo(0, 1);
-            }, 0);
-        });
+        setTimeout(function(){
+            window.scrollTo(0, 1);
+        }, 0);
     }
 }, 'body');

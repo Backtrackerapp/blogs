@@ -20,6 +20,14 @@ body {
     min-height: 100%;
     padding-top: 60px;
     box-sizing: border-box;
+    overflow: hidden;
+}
+
+@media (max-width: 750px) {
+    body {
+        min-height: 103%;
+        overflow-y: scroll;
+    }
 }
 
 body.mobile {

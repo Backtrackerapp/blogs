@@ -42,7 +42,9 @@ img {
 .article-head
 .article-cover
 img {
-    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin:auto;
 }
 
 .articleRead
@@ -53,6 +55,13 @@ h1 {
 
 .articleRead
 .article-content
-p {
+a {
+    color: #EE6E47;
+    text-decoration: none;
+}
 
+.articleRead
+.article-content
+a:hover {
+    color: #DE4A1B;
 }

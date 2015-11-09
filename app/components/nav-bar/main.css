@@ -124,6 +124,7 @@ li {
     background: #084c6d;
     top: 0;
     z-index: 10;
+    -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
     padding: 10px 0;
     box-sizing: border-box;
@@ -131,6 +132,7 @@ li {
 
 .NavBar.shown
 .mobile-nav {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
 }
 

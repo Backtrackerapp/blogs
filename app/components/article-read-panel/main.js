@@ -2,8 +2,6 @@ import './main.css!';
 import tmpl from './main-tmpl.html!text';
 import Vue from 'vue';
 
-const URL = "https://blogs.backtrackerapp.com/";
-
 export default {
     template: tmpl,
     props: ['article'],
@@ -12,10 +10,10 @@ export default {
             var width = window.innerWidth;
             if(width < 800) return this.article.cover_image.iphone;
             if(width < 1200) return this.article.cover_image.ipad;
-            return this.article.cover_image.original;
+            return this.article.cover_image.web;
         },
         mail_to(){
-            return `mailto:?&subject=${this.article.title}&body=Check%20out%20this%20awesome%20article%3A%20%0Ablogs.backtrackerapp.com/%23!/${URL+this.article.id}`;
+            return `mailto:?&subject=${this.article.title}&body=Check%20out%20this%20awesome%20article%3A%20%0Ablogs.backtrackerapp.com/%23!/${this.article.id}`;
         },
         tweet(){
             return `https://twitter.com/intent/tweet?text=Check%20out%20this%20awesome%20article%3A%20blogs.backtrackerapp.com/%23!/${this.article.id}`;

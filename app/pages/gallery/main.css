@@ -9,7 +9,10 @@
 
 .GalleryPage
 .gallery-head
-h1 {
+h1,
+.GalleryPage
+.gallery-head
+h4 {
     text-align: center;
     font-weight: 200;
 }
