@@ -17,7 +17,9 @@ function calc_content_height() {
     return (window.innerHeight - navbar.offsetHeight);
 }
 
-var router = new Router();
+var router = new Router({
+    history: true
+});
 var debug = false;
 
 Vue.http.options.root = '//api.backtrackerapp.com';
@@ -41,7 +43,7 @@ router.start({
             modal_height: "0",
             mobile_nav: false,
             modal: null,
-            modal_params: null,
+            modal_params: null
         };
     },
     computed: {

@@ -13,16 +13,16 @@ export default {
             return this.article.cover_image.web;
         },
         mail_to(){
-            return `mailto:?&subject=${this.article.title}&body=Check%20out%20this%20awesome%20article%3A%20%0Ablogs.backtrackerapp.com/%23!/${this.article.id}`;
+            return `mailto:?&subject=${this.article.title}&body=Check%20out%20this%20awesome%20article%3A%20%0Ablogs.backtracker.co/${this.article.id}`;
         },
         tweet(){
-            return `https://twitter.com/intent/tweet?text=Check%20out%20this%20awesome%20article%3A%20blogs.backtrackerapp.com/%23!/${this.article.id}`;
+            return `https://twitter.com/intent/tweet?text=Check%20out%20this%20awesome%20article%3A%20blogs.backtracker.co/${this.article.id}`;
         },
         facebook() {
-            return `https://www.facebook.com/sharer/sharer.php?u=blogs.backtrackerapp.com/%23!/${this.article.id}`;
+            return `https://www.facebook.com/sharer/sharer.php?u=blogs.backtracker.co/${this.article.id}`;
         },
         pinterest() {
-            var url = `blogs.backtrackerapp.com/%23!/${this.article.id}`;
+            var url = `blogs.backtracker.co/${this.article.id}`;
             return `https://pinterest.com/pin/create/button/?url=${url}&media=${this.article.cover_image.original}&description=Awesome%20Article!%20${url}`;
         }
     },

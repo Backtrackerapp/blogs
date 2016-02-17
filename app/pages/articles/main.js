@@ -2,6 +2,7 @@ import './main.css!';
 import tmpl from './main-tmpl.html!text';
 import Vue from 'vue';
 import 'app/components/article-thumb-panel/main';
+import 'app/components/contact-panel/main';
 import article_read from 'app/components/article-read-panel/main';
 
 var filter_map = {
