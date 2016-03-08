@@ -18,12 +18,12 @@
     </div>
     <div class="nav-bar-dropdown" v-show="categ" transition="left-slide">
         <ul>
-            <li v-link.literal="/?f=europe">Europe</li>
-            <li v-link.literal="/?f=northamerica">North America</li>
-            <li v-link.literal="/?f=latinamerica">Latin America</li>
-            <li v-link.literal="/?f=aus">Australasia</li>
-            <li v-link.literal="/?f=asia">Asia</li>
-            <li v-link.literal="/?f=africa">Africa</li>
+            <li><a v-link.literal="/?f=europe">Europe</a></li>
+            <li><a v-link.literal="/?f=northamerica">North America</a></li>
+            <li><a v-link.literal="/?f=latinamerica">Latin America</a></li>
+            <li><a v-link.literal="/?f=aus">Australasia</a></li>
+            <li><a v-link.literal="/?f=asia">Asia</a></li>
+            <li><a v-link.literal="/?f=africa">Africa</a></li>
         </ul>
     </div>
     <div class="mobile-nav">
@@ -31,13 +31,13 @@
             <li @click.stop="toggle_mobile_categories">Blogs</li>
             <li>&mdash;</li>
             <template v-if="mobile_categ">
-                <li v-link.literal="/">All</li>
-                <li v-link.literal="/?f=europe">Europe</li>
-                <li v-link.literal="/?f=northamerica">North America</li>
-                <li v-link.literal="/?f=latinamerica">Latin America</li>
-                <li v-link.literal="/?f=aus">Australasia</li>
-                <li v-link.literal="/?f=asia">Asia</li>
-                <li v-link.literal="/?f=africa">Africa</li>
+                <li><a v-link.literal="/">All</a></li>
+                <li><a v-link.literal="/?f=europe">Europe</a></li>
+                <li><a v-link.literal="/?f=northamerica">North America</a></li>
+                <li><a v-link.literal="/?f=latinamerica">Latin America</a></li>
+                <li><a v-link.literal="/?f=aus">Australasia</a></li>
+                <li><a v-link.literal="/?f=asia">Asia</a></li>
+                <li><a v-link.literal="/?f=africa">Africa</a></li>
             </template>
             <template v-else>
                 <!-- <li v-link.literal="/gallery">Gallery</li> -->
