@@ -37,6 +37,7 @@ function render(res, opts){
         description :   'Backtrackers Blogging',
         keywords :      '',
         image :         'http://s3-eu-west-1.amazonaws.com/static.backtracker/logo-shadow.png'
+        id : ' '
     }
     ejs.renderFile(__dirname + baseURL + '/index.ejs', opts, (err, html) => {
         if(err) {
@@ -56,6 +57,7 @@ if(!debug){
                 opts.title = result.title;
                 opts.description = result.description;
                 opts.keywords = result.keywords;
+                opts.id = result.id;
                 if(result.cover_image) {
                     opts.image = result.cover_image.ipad;
                 } else {
