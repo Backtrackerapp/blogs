@@ -8,9 +8,11 @@ import gallery_page from 'app/pages/gallery/main';
 import 'app/components/nav-bar/main';
 import gallery_modal from 'app/components/gallery-modal/main';
 
+var debug = false;
+
 Vue.use(Router);
 Vue.use(Resource);
-Vue.config.debug = true;
+Vue.config.debug = debug;
 
 function calc_content_height() {
     var navbar = document.getElementsByClassName("NavBar")[0];
@@ -20,7 +22,6 @@ function calc_content_height() {
 var router = new Router({
     history: true
 });
-var debug = false;
 
 Vue.http.options.root = '//api.backtrackerapp.com';
 if(debug) Vue.http.options.root = '//backtrackerdev.herokuapp.com';

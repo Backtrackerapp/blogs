@@ -55,10 +55,6 @@ var articles = Vue.extend({
     methods: {
         open_article(article) {
             this.viewed = article;
-            if(this.filter)
-                this.$route.router.go(`/${article.id}?f=${this.filter}`);
-            else
-                this.$route.router.go(`/${article.id}`);
         },
         get_more(){
             this.page++;
@@ -89,6 +85,11 @@ var articles = Vue.extend({
                         this.mored = false;
                     }
                     this.articles = data;
+                    setTimeout(function () {
+                        if (typeof window.callPhantom === 'function') {
+                            window.callPhantom();
+                        }
+                    }, 0);
                 });
             }
         }

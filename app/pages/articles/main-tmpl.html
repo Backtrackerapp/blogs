@@ -5,7 +5,9 @@
             <div class="back" v-if="viewed" v-link.literal="/"><img src="resources/back-arrow.svg" /></div>
             <h4 v-if="filter" v-text="fancy_filter" class="filter"></h4>
             <div class="flex">
-                <article-thumb v-for="article in articles" :article="article" @click="open_article(article)" :selected="selected"></article-thumb>
+                <a v-for="article in articles" v-link="'/'+article.id">
+                    <article-thumb :article="article" @click="open_article(article)" :selected="selected"></article-thumb>
+                </a>
             </div>
             <button v-if="more && articles.length>=2" @click="get_more" v-text="more_text"></button>
             <h4 v-if="!more && mored">We've run out of travel wisdom.</h4>

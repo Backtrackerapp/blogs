@@ -14,6 +14,9 @@ Vue.component('nav-bar', {
 
     },
     template: tmpl,
+    ready(){
+        this.$route.router.afterEach(this.reset);
+    },
     methods: {
         reset(){
             this.categ = this.mobile_categ = this.$root.mobile_nav = this.mobile_nav = false;

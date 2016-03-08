@@ -5,7 +5,7 @@
         </div>
         <div class="nav-bar-right">
             <a href="//www.backtracker.co">Home</a>
-            <a @click="go_home">Blogs <span @click.stop="toggle_categories" :class="{open: categ}"><img src="resources/chevron.svg" class="toggle" /></span></a>
+            <a v-link.literal="/">Blogs <span @click.stop.prevent="toggle_categories" :class="{open: categ}"><img src="resources/chevron.svg" class="toggle" /></span></a>
             <!-- <a v-link.literal="/gallery">Gallery</a> -->
             <a href="//app.backtracker.co/#/?login=t&menu=t" class="login">Web app</a>
             <div class="mobile-btn">
@@ -16,14 +16,14 @@
             </div>
         </div>
     </div>
-    <div class="nav-bar-dropdown" v-if="categ" transition="left-slide">
+    <div class="nav-bar-dropdown" v-show="categ" transition="left-slide">
         <ul>
-            <li @click="go_category('europe')">Europe</li>
-            <li @click="go_category('northamerica')">North America</li>
-            <li @click="go_category('latinamerica')">Latin America</li>
-            <li @click="go_category('aus')">Australasia</li>
-            <li @click="go_category('asia')">Asia</li>
-            <li @click="go_category('africa')">Africa</li>
+            <li v-link.literal="/?f=europe">Europe</li>
+            <li v-link.literal="/?f=northamerica">North America</li>
+            <li v-link.literal="/?f=latinamerica">Latin America</li>
+            <li v-link.literal="/?f=aus">Australasia</li>
+            <li v-link.literal="/?f=asia">Asia</li>
+            <li v-link.literal="/?f=africa">Africa</li>
         </ul>
     </div>
     <div class="mobile-nav">
@@ -31,13 +31,13 @@
             <li @click.stop="toggle_mobile_categories">Blogs</li>
             <li>&mdash;</li>
             <template v-if="mobile_categ">
-                <li @click="go_home">All</li>
-                <li @click="go_category('europe')">Europe</li>
-                <li @click="go_category('northamerica')">North America</li>
-                <li @click="go_category('latinamerica')">Latin America</li>
-                <li @click="go_category('aus')">Australasia</li>
-                <li @click="go_category('asia')">Asia</li>
-                <li @click="go_category('africa')">Africa</li>
+                <li v-link.literal="/">All</li>
+                <li v-link.literal="/?f=europe">Europe</li>
+                <li v-link.literal="/?f=northamerica">North America</li>
+                <li v-link.literal="/?f=latinamerica">Latin America</li>
+                <li v-link.literal="/?f=aus">Australasia</li>
+                <li v-link.literal="/?f=asia">Asia</li>
+                <li v-link.literal="/?f=africa">Africa</li>
             </template>
             <template v-else>
                 <!-- <li v-link.literal="/gallery">Gallery</li> -->
