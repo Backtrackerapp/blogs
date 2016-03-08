@@ -44,7 +44,8 @@ router.start({
             modal_height: "0",
             mobile_nav: false,
             modal: null,
-            modal_params: null
+            modal_params: null,
+            title: 'Backtracker Blogs'
         };
     },
     computed: {
@@ -77,4 +78,4 @@ router.start({
             window.scrollTo(0, 1);
         }, 0);
     }
-}, 'body');
+}, 'html');
