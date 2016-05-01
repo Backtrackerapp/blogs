@@ -78,4 +78,4 @@ router.start({
             window.scrollTo(0, 1);
         }, 0);
     }
-}, 'html');
+}, 'body');
